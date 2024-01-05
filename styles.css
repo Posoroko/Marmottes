@@ -36,11 +36,10 @@ header {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 36px;
     color: white;
     text-align: center;
     padding: 10px;
-    /* margin: 20px 0; */
     border-radius: 20px;
 }
 
@@ -86,6 +85,7 @@ main {
     height: 80%;
     display: grid;
     place-items: center;
+    background-image: url("./images/herbe.jpg");
 }
 
 .tileBox {
@@ -95,7 +95,9 @@ main {
     border-radius: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    border: 5px solid rgb(101, 74, 41);
+    overflow: hidden;
+    box-shadow: 5px 5px 10px black;
 }
 .tile {
     border: 1px solid rgba(255, 255, 255, 0.13);
