@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+.pixel {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+button {
+    all: unset;
+}
+
+body {
+    height: 100vh;
+    background-color: #191a1d;
+    
+}
+
+#_app {
+    width: min(800px, 100%);
+    height: 100%;
+    background-color: #10111f;
+    margin: auto;
+}
+header {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.r {
+    border: 1px solid red;
+}
+
+h1 {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    /* margin: 20px 0; */
+    border-radius: 20px;
+}
+
+.big-box {
+    width: 100%;
+    display: flex;
+}
+.big-box * {
+    color: white;
+}
+
+.big-box .box {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center-box {
+    gap: 20px;
+}
+#timer {
+    font-size: 40px;
+    padding: 10px;
+}
+#score, #missed {
+    font-size: 30px;
+    padding: 10px;
+}
+.app-btn {
+    font-size: 24px;
+    background-color: #2c6936;
+    padding: 5px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.485);
+}
+.app-btn:hover {
+    background-color: #1c4122;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.704);
+}
+
+main {
+    height: 80%;
+    display: grid;
+    place-items: center;
+}
+
+.tileBox {
+    width: min(500px, 100%);
+    aspect-ratio: 1/1;
+    background-color: rgb(23, 48, 23);
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.tile {
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    position:relative;
+}
+.marmot, .ko, .hitBoxSvg {
+    display: none;
+}
+
+.tile[data-state="active"] .marmot,
+.tile[data-state="active"] .hitBoxSvg {
+    display: block;
+}
+
+.tile[data-state="success"] .ko {
+    display: block;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hitBoxSvg{
+    pointer-events: none;
+}
+.hitbox {
+    pointer-events: all;
+}
+.hitBoxSvg, .marmot, .ko {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hitbox {
+    stroke-width: 1px;
+    /* stroke: red; */
+    cursor: pointer;
+    fill: transparent
+}
